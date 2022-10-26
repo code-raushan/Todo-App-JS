@@ -1,3 +1,4 @@
+
 const container = document.querySelector('.container');
 const addBtn = document.querySelector('.addButton');
 
@@ -44,9 +45,15 @@ function createTodo(){
     
 }
 function todo(){
-    //creating the todo block    
-    createTodo();
-    document.querySelector('.input').value = '';   
+    //creating the todo block
+    if(document.querySelector('.input').value===""){
+        alert("Empty Todo");
+        return;
+    }else{
+        createTodo();
+        document.querySelector('.input').value = ''; 
+    }    
+      
 }
 addBtn.addEventListener('click', todo);
 
